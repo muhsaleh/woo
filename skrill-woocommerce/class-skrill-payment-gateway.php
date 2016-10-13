@@ -22,6 +22,8 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
     public $payment_method_description = '';
     public $language;
     public $plugin_directory;
+    public $skrill_log;
+    public $logger_handle;
 
     protected $wc_cancelled_status = 'wc-cancelled';
     protected $wc_failed_status = 'wc-failed';
@@ -62,6 +64,9 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
         $this->method_description = $this->get_payment_method_logo();
         $this->init_settings();
 
+        $this->skrill_log = new WC_Logger();
+        $this->logger_handle = 'skrill-'.date('Ym');
+
         //save admin configuration from woocomerce checkout tab
         add_action(
             'woocommerce_update_options_payment_gateways_' . $this->payment_method_id,
@@ -76,7 +81,7 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
             array(&$this, 'render_additional_information')
         );
         add_action('woocommerce_admin_order_data_after_order_details', array(&$this, 'update_order'));
-        add_action('woocommerce_process_shop_order_meta', array( &$this, 'save_order_meta'));
+        add_action('woocommerce_process_shop_order_meta', array(&$this, 'save_order_meta'));
 
         // enable woocommerce refund for {payment gateway}
         $this->supports = array('refunds');
@@ -135,11 +140,9 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
                 $payment_settings = get_option('woocommerce_'.$this->payment_method_id.'_settings');
                 $acc_settings = get_option('woocommerce_skrill_acc_settings');
                 if ($payment_settings['show_separately'] != 'yes'
-                    ||(($this->payment_method == 'VSA'
-                        || $this->payment_method == 'MSC'
-                        || $this->payment_method == 'AMX'
-                        || $this->payment_method == 'JCB'
-                        || $this->payment_method == 'DIN')
+                    ||(($this->payment_method_id == 'skrill_vsa'
+                        || $this->payment_method_id == 'skrill_msc'
+                        || $this->payment_method_id == 'skrill_amx')
                         && ($acc_settings['enabled'] == 'yes' 
                             && $acc_settings['show_separately'] == 'yes'))) {
                     return false;
@@ -206,6 +209,7 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
 
         if (isset($_REQUEST['status']) && isset($_REQUEST['status_url'])) {
             if (!isset(WC()->session->skrill_status_url)) {
+                $this->add_log('Use status_url');
                 $this->process_status_response();
                 WC()->session->set('skrill_status_url', true);
             }
@@ -214,11 +218,13 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
                 wp_safe_redirect(home_url()); 
             } else {
                 if (!isset(WC()->session->skrill_receipt_page)) {
-                    $this->render_payment_form();
+                    $this->add_log('Start payment process with payment method : '.$this->payment_method);
                     WC()->session->set('skrill_receipt_page', true);
+                    $this->render_payment_form();
                 } elseif (isset($_REQUEST['transaction_id'])) {
                     $this->process_payment_response();  
                 } elseif (isset($_REQUEST['cancelled'])) {
+                    $this->add_log('Payment cancelled by user');
                     $this->process_error_payment($this->wc_cancelled_status, 'ERROR_GENERAL_CANCEL');
                 }  
             }  
@@ -230,9 +236,16 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
     */
     protected function render_payment_form()
     {
+        $this->add_log('Get checkout parameters');
         $checkout_parameters = $this->get_checkout_parameters();
+        $this->add_log('Checkout parameters : ' . print_r($checkout_parameters, true));
+
+        $this->add_log('Get payment widget url');
         $payment_url = SkrillPayment::getPaymentUrlByCheckoutParameters($checkout_parameters);
+        $this->add_log('Payment widget url : ' . $payment_url);
+
         if (!$payment_url) {
+            $this->add_log('Payment widget url is not generated');
             $this->process_error_payment($this->wc_cancelled_status, 'ERROR_GENERAL_REDIRECT');
         }
 
@@ -282,7 +295,7 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
         $checkout_parameters['detail1_description'] = "Order pay from " . $this->wc_order->billing_email;;
 
         if ($this->payment_method_id != 'skrill_flexible') {
-            $checkout_parameters['payment_methods'] = $this->payment_method;
+            $checkout_parameters['payment_methods'] = $this->payment_brand;
         }
 
         return $checkout_parameters;
@@ -315,19 +328,26 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
     */
     protected function process_status_response()
     {
+        $this->add_log('Get payment response from status_url');
         $payment_response = $this->get_payment_response();
+        $this->add_log('Payment response from status_url : ' . print_r($payment_response, true));
+
         $skrill_settings['merchant_id'] = get_option('skrill_merchant_id');
         $skrill_settings['secret_word'] = get_option('skrill_secret_word');
-        $is_fraud = SkrillPayment::isFraud($skrill_settings, $payment_response, $this->wc_order->order_total);
+        $is_fraud = SkrillPayment::isFraud($skrill_settings, $payment_response);
         if (!$is_fraud) {
             $transaction = Transactions_Model::get_data($this->wc_order->id);
             if (!$transaction) {
+                $this->add_log('Save status_url payment response');
                 Transactions_Model::save_payment_response(
                     $payment_response['transaction_id'], 
                     serialize($payment_response)
                 );
+                $this->add_log('status_url payment response successfully saved');
             } elseif ($transaction['payment_status'] == $this->pending_status) {
+                $this->add_log('Update status_url payment response');
                 $this->update_order_status($payment_response['status']);
+                $this->add_log('status_url payment response successfully updated');
             }
         }
     }
@@ -359,19 +379,27 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
         if ($is_transaction_id_exist) {
             $payment_response = unserialize($is_transaction_id_exist['payment_response']);
             $transaction_log = $this->set_transaction_log($payment_response);
+            $this->add_log('Update transaction log : ' . print_r($transaction_log, true));
             Transactions_Model::update($transaction_id, $transaction_log);
+            $this->add_log('Transaction log successfully updated');
         } else {
             $payment_parameters = array();
             $payment_parameters['email'] = get_option('skrill_merchant_account');
             $payment_parameters['password'] = get_option('skrill_api_passwd');
             $payment_parameters['action'] = 'status_trn';
             $payment_parameters['trn_id'] = $transaction_id;
+            $this->add_log('Get payment responses from status_trn');
             $is_payment_accepted = SkrillPayment::isPaymentAccepted($payment_parameters, $payment_response);
             if (!$is_payment_accepted) {
+                $this->add_log('No payment responses from gateway');
                 $this->process_error_payment($this->wc_pending_status, 'ERROR_GENERAL_NORESPONSE');
             }
+            $this->add_log('Payment responses from status_trn : ' . print_r($payment_response, true));
+
             $transaction_log = $this->set_transaction_log($payment_response);
+            $this->add_log('Save transaction log : ' . print_r($transaction_log, true));
             Transactions_Model::save($transaction_log);
+            $this->add_log('Transaction log successfully saved');
         }
         $this->validate_payment_response($payment_response);
     }
@@ -383,13 +411,19 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
     */
     protected function validate_payment_response($payment_response)
     {
+        $this->add_log('Get version tracker parameters');
         $version_tracker_parameters = $this->get_version_tracker_parameters();
-        SkrillVersionTracker::sendVersionTracker($version_tracker_parameters);
+        $this->add_log('Version tracker parameters : ' . print_r($version_tracker_parameters, true));
+
+        $this->add_log('Send version tracker parameters');
+        $version_tracker_response = SkrillVersionTracker::sendVersionTracker($version_tracker_parameters);
+        $this->add_log('Version tracker response : ' . print_r($version_tracker_response, true));
 
         $skrill_settings['merchant_id'] = get_option('skrill_merchant_id');
         $skrill_settings['secret_word'] = get_option('skrill_secret_word');
-        $is_fraud = SkrillPayment::isFraud($skrill_settings, $payment_response, $this->wc_order->order_total);
+        $is_fraud = SkrillPayment::isFraud($skrill_settings, $payment_response);
         if ($is_fraud) {
+            $this->add_log('Process refund (fraud payment)');
             $this->process_fraud_payment($payment_response);
         } else {
             if ($payment_response['status'] == $this->processed_status 
@@ -401,6 +435,7 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
                     $error_identifier = 
                         SkrillPayment::getSkrillErrorMapping($payment_response['failed_reason_code']);
                 }
+                $this->add_log('Payment error : ' . print_r($error_identifier, true));
                 $this->process_error_payment(
                     $this->wc_failed_status,
                     $error_identifier,
@@ -418,20 +453,27 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
     protected function process_fraud_payment($payment_response)
     {
         $order_id = $this->wc_order->id;
+        $this->add_log('Get refund parameters');
         $refund_parameters['email'] = get_option('skrill_merchant_account');
         $refund_parameters['password'] = get_option('skrill_api_passwd');
         $refund_parameters['mb_transaction_id'] = $payment_response['mb_transaction_id'];
         $refund_parameters['amount'] = $payment_response['amount'];
+        $this->add_log('Refund parameters : ' . print_r($refund_parameters, true));
 
+        $this->add_log('Get refund response');
         $refund_response = SkrillPayment::doRefund($refund_parameters);
+        $this->add_log('Refund response : ' . print_r($refund_response, true));
+
         $refund_status = (string) $refund_response->status;
         if ($refund_status == $this->processed_status
             || $refund_status == $this->pending_status) {
             $order_status = $this->wc_refunded_status;
             $payment_status = $this->refunded_status;
+            $this->add_log('Payment is fraud and refunded');
         } else {
             $order_status = $this->wc_failed_status;
             $payment_status = $this->refund_failed_status;
+            $this->add_log('Payment is fraud and not refunded');
         }
 
         $this->process_error_payment($order_status, 'ERROR_GENERAL_FRAUD_DETECTION', $payment_status);
@@ -467,18 +509,21 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
 
     /**
     * Set additional information from payment response
-    * add order_origin and order country
+    * add order_origin, order country and skrill_account
     * @param array $payment_response
     * @return array
     */
     protected function set_additional_information($payment_response)
     {
         $additional_information = '';
-        if ($payment_response["ip_country"] && $payment_response['payment_instrument_country']) {
+        if (isset($payment_response["ip_country"]) && isset($payment_response['payment_instrument_country'])) {
             $information['order_origin'] = $payment_response["ip_country"];
             $information['order_country'] = $payment_response["payment_instrument_country"];
-            $additional_information = serialize($information);
         }
+        if ($this->payment_method_id == 'skrill_wlt' && isset($payment_response["pay_from_email"])) {
+            $information['skrill_account'] = $payment_response["pay_from_email"];
+        }
+        $additional_information = serialize($information);
         return $additional_information;
     }
 
@@ -565,6 +610,8 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
 
         $this->wc_order->reduce_order_stock();
 
+        $this->add_log('Payment has been successfully completed');
+
         WC()->cart->empty_cart();
         wp_safe_redirect($this->get_return_url($this->wc_order));
         exit();
@@ -605,6 +652,8 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
         WC()->session->errors = $error_translated;
         wc_add_notice($error_translated, 'error');
 
+        $this->add_log('Payment has not been successfully completed');
+
         wp_safe_redirect(WC()->cart->get_checkout_url());
         exit(); 
     }
@@ -624,13 +673,15 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
             $order_status = $this->wc_failed_status;
         }
 
+        $this->add_log('Update order status : '. $order_status .' ('.$payment_status.')');
         Transactions_Model::update_payment_status($this->wc_order->id, $payment_status);
         $this->wc_order->update_status($order_status, 'order_note');
+        $this->add_log('payment order has been successfully updated');
     }
 
     /**
     * [BACKEND] Render additional information at backend
-    * show payment title, payment status, order_origin, order_country and currency
+    * show payment title, payment status, order_origin, order_country, currency, transaction id & skrill account email
     * from hook "woocommerce_admin_order_data_after_shipping_address"
     */
     public function render_additional_information()
@@ -724,6 +775,7 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
                     }
 
                     if ($order_id && $request_section == 'update-order') {
+                        $this->add_log('Start update order process');
                         $this->process_updated_order($transaction);
                     }
 
@@ -770,16 +822,21 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
     */
     protected function get_payment_status($transaction)
     {
+        $this->add_log('Get update order parameters');
         $parameters['action'] = 'status_trn';
         $parameters['email'] = get_option('skrill_merchant_account');
         $parameters['password'] = get_option('skrill_api_passwd');
         $parameters['mb_trn_id'] = $transaction['mb_transaction_id'];
+        $this->add_log('Update order parameters : ' . print_r($parameters, true));
 
         $payment_status = '';
+        $this->add_log('Get updated order response');
         $is_payment_accepted = SkrillPayment::isPaymentAccepted($parameters, $payment_status);
         if ($is_payment_accepted) {
+            $this->add_log('Updated order response : ' . print_r($payment_status, true));
             return $payment_status;
         }
+        $this->add_log('No updated order responses from gateway');
         return false;
     }
 
@@ -794,6 +851,7 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
     public function process_refund($order_id, $amount = null, $reason = '')
     {
         $this->wc_order = wc_get_order($order_id);
+
         $transaction = Transactions_Model::get_data($order_id);
         $is_skrill_payment = Configuration::is_skrill_payment($transaction['payment_method_id']);
 
@@ -896,24 +954,37 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
     protected function is_refunded_payment($mb_transaction_id)
     {
         $order_id = $this->wc_order->id;
+        $this->add_log('Start refund payment process');
+
+        $this->add_log('Get refund parameters');
         $refund_parameters['email'] = get_option('skrill_merchant_account');
         $refund_parameters['password'] = get_option('skrill_api_passwd');
         $refund_parameters['mb_transaction_id'] = $mb_transaction_id;
         $refund_parameters['amount'] = $this->wc_order->order_total;
+        $this->add_log('Refund parameters : '. print_r($refund_parameters, true));
 
+        $this->add_log('Get refund response');
         $refund_response = SkrillPayment::doRefund($refund_parameters);
+        $this->add_log('Refund response : '. print_r($refund_response, true));
+
         $refund_status = (string) $refund_response->status;
         if ($refund_status == $this->processed_status 
             || $refund_status == $this->pending_status) {
             $this->wc_order->update_status($this->wc_refunded_status, 'order_note');
+            $this->add_log('update payment status');
             Transactions_Model::update_refunded_status(
                 $order_id, 
                 $this->refunded_status, 
                 $refund_response->mb_amount
             );
+            $this->add_log('payment status has been successfully updated');
+            $this->add_log('payment order has been successfully refunded');
             return true;
         } else {
+            $this->add_log('update payment status');
             Transactions_Model::update_refunded_status($order_id, $this->refund_failed_status);
+            $this->add_log('payment status has been successfully updated');
+            $this->add_log('payment order has not been successfully refunded');
 
         }
         return false;
@@ -967,6 +1038,21 @@ class Skrill_Payment_Gateway extends WC_Payment_Gateway
         }
         wp_safe_redirect($redirect);
         exit;
+    }
+
+    /**
+    * Add log for debugging
+    * @param string $message
+    * @param int $order_id
+    */
+    public function add_log($message, $order_id = false)
+    {
+        if (!$order_id) {
+            $order_id = $this->wc_order->id;
+        }
+
+        $logger_message = '[Order Id : '. $order_id .'] ' . $message;
+        $this->skrill_log->add($this->logger_handle, $logger_message."\r\n");
     }
 
 }

@@ -5,7 +5,7 @@
 * Description: WooCommerce with Skrill payment gateway
 * Author:      Skrill
 * Author URI:  hhttp://www.skrill.com/
-* Version:     1.0.0
+* Version:     1.0.1
 */
 
 /**
@@ -23,7 +23,7 @@ add_action('plugins_loaded', 'init_payment_gateway', 0);
 
 ob_start();
 
-define('SKRILL_PLUGIN_VERSION', '1.0.0');
+define('SKRILL_PLUGIN_VERSION', '1.0.1');
 define('SKRILL_PLUGIN_FILE', __FILE__);
 
 /**
@@ -92,8 +92,6 @@ function init_payment_gateway()
         $payment_methods[] = 'Gateway_Skrill_VSE';
         $payment_methods[] = 'Gateway_Skrill_MAE';
         $payment_methods[] = 'Gateway_Skrill_AMX';
-        $payment_methods[] = 'Gateway_Skrill_DIN';
-        $payment_methods[] = 'Gateway_Skrill_JCB';
         $payment_methods[] = 'Gateway_Skrill_GCB';
         $payment_methods[] = 'Gateway_Skrill_DNK';
         $payment_methods[] = 'Gateway_Skrill_PSP';

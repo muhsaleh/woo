@@ -19,6 +19,7 @@ class Gateway_Skrill_NTL extends Skrill_Payment_Gateway
     var $id = 'skrill_ntl';
     public $payment_method_logo = 'ntl.png';
     public $payment_method = 'NTL';
+    public $payment_brand = 'NTL';
 
 }
 

@@ -19,6 +19,7 @@ class Gateway_Skrill_VSA extends Skrill_Payment_Gateway
     var $id = 'skrill_vsa';
     public $payment_method_logo = 'vsa.png';
     public $payment_method = 'VSA';
+    public $payment_brand = 'VSA';
 
 }
 

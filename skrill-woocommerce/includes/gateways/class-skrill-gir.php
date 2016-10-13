@@ -19,6 +19,7 @@ class Gateway_Skrill_GIR extends Skrill_Payment_Gateway
     var $id = 'skrill_gir';
     public $payment_method_logo = 'gir.png';
     public $payment_method = 'GIR';
+    public $payment_brand = 'GIR';
     public $payment_method_description = 'Germany';
 
 }

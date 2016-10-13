@@ -19,6 +19,7 @@ class Gateway_Skrill_VSE extends Skrill_Payment_Gateway
     var $id = 'skrill_vse';
     public $payment_method_logo = 'vse.png';
     public $payment_method = 'VSE';
+    public $payment_brand = 'VSE';
     public $payment_method_description = 'All Countries (excluding United States Of America)';
 
 }

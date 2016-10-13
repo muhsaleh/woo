@@ -19,6 +19,7 @@ class Gateway_Skrill_PSC extends Skrill_Payment_Gateway
     var $id = 'skrill_psc';
     public $payment_method_logo = 'psc.png';
     public $payment_method = 'PSC';
+    public $payment_brand = 'PSC';
     public $payment_method_description = 'American Samoa, Austria, Belgium, Canada,
         Croatia, Cyprus, Czech Republic, Denmark,
         Finland, France, Germany, Guam, Hungary,

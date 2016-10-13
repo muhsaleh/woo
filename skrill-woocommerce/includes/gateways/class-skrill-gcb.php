@@ -19,6 +19,7 @@ class Gateway_Skrill_GCB extends Skrill_Payment_Gateway
     var $id = 'skrill_gcb';
     public $payment_method_logo = 'gcb.png';
     public $payment_method = 'GCB';
+    public $payment_brand = 'GCB';
     public $payment_method_description = 'France';
 
 }

@@ -19,6 +19,7 @@ class Gateway_Skrill_MSC extends Skrill_Payment_Gateway
     var $id = 'skrill_msc';
     public $payment_method_logo = 'msc.png';
     public $payment_method = 'MSC';
+    public $payment_brand = 'MSC';
 
 }
 

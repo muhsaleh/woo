@@ -19,6 +19,7 @@ class Gateway_Skrill_PLI extends Skrill_Payment_Gateway
     var $id = 'skrill_pli';
     public $payment_method_logo = 'pli.png';
     public $payment_method = 'PLI';
+    public $payment_brand = 'PLI';
     public $payment_method_description = 'Australia';
 
 }

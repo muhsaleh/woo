@@ -36,7 +36,7 @@ class SkrillPayment
                  SVK,SVN,ESP,SWE,CHE,TUR,GBR,USA,VIR'
             ),
             'ACC' => array(
-                 'name' => 'Credit Card / Visa, Mastercard, AMEX, JCB, Diners',
+                 'name' => 'Credit Cards',
                  'countries'  => 'ALL'
             ),
             'VSA' => array(
@@ -72,14 +72,6 @@ class SkrillPayment
                  'name' => 'American Express',
                  'countries'  => 'ALL'
             ),
-            'DIN' => array(
-                 'name' => 'Diners',
-                 'countries'  => 'ALL'
-            ),
-            'JCB' => array(
-                 'name' => 'JCB',
-                 'countries'  => 'ALL'
-            ),
             'GCB' => array(
                  'name' => 'Carte Bleue by Visa',
                  'countries'  => 'FRA'
@@ -97,7 +89,7 @@ class SkrillPayment
                  'countries'  => 'ITA'
             ),
             'OBT' => array(
-                 'name' => 'Skrill Direct (Online Bank Transfer)',
+                 'name' => 'Rapid Transfer',
                  'countries'  => 'DEU,GBR,FRA,ITA,ESP,HUN,AUT'
             ),
             'GIR' => array(
@@ -325,16 +317,13 @@ class SkrillPayment
     /**
      * Check Payment Fraud
      *
-     * param : $skrillSettings, $paymentResult, $orderTotal
+     * param : $skrillSettings, $paymentResult
      * return : boolean
      */
-    public static function isFraud($skrillSettings, $paymentResult, $orderTotal)
+    public static function isFraud($skrillSettings, $paymentResult)
     {
-        if ($paymentResult['amount']) {
-            $orderTotal = self::setNumberFormat($orderTotal);
-            $amount = self::setNumberFormat($paymentResult['amount']);
-            return !( ($orderTotal == $amount) &&
-                ($paymentResult['md5sig'] == self::generateMd5sig($skrillSettings, $paymentResult)) );
+        if ($paymentResult['md5sig']) {
+            return !($paymentResult['md5sig'] == self::generateMd5sig($skrillSettings, $paymentResult));
         } 
         return false; 
     }

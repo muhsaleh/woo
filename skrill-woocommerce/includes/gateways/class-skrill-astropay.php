@@ -18,7 +18,8 @@ class Gateway_Skrill_Astropay extends Skrill_Payment_Gateway
 {
     var $id = 'skrill_astropay';
     public $payment_method_logo = 'astropay.png';
-    public $payment_method = 'ADB,AOB,ACI,AUP';
+    public $payment_method = 'ADB';
+    public $payment_brand = 'ADB,AOB,ACI,AUP';
 
 }
 

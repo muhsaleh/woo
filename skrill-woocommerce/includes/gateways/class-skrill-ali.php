@@ -19,6 +19,7 @@ class Gateway_Skrill_ALI extends Skrill_Payment_Gateway
     var $id = 'skrill_ali';
     public $payment_method_logo = 'ali.png';
     public $payment_method = 'ALI';
+    public $payment_brand = 'ALI';
 
 }
 

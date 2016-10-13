@@ -29,5 +29,10 @@ if (!defined('ABSPATH')) {
 			echo  __('SKRILL_BACKEND_ORDER_COUNTRY', 'wc-skrill').' : '.$additional_information['order_country'].'<br />';
 		}
 		echo __('SKRILL_BACKEND_ORDER_CURRENCY', 'wc-skrill').' : '.$transaction['currency'].'<br />';
+		echo '<br />';
+		echo  __('BACKEND_TT_TRANSACTION_ID', 'wc-skrill').' : '.$transaction['transaction_id'].'<br />';
+		if (isset($additional_information['skrill_account'])) {
+			echo  __('SKRILL_BACKEND_EMAIL_ACCOUNT', 'wc-skrill').' : '.$additional_information['skrill_account'].'<br />';
+		}
 	?>
 </p>

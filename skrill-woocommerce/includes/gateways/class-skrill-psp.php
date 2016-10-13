@@ -19,6 +19,7 @@ class Gateway_Skrill_PSP extends Skrill_Payment_Gateway
     var $id = 'skrill_psp';
     public $payment_method_logo = 'psp.png';
     public $payment_method = 'PSP';
+    public $payment_brand = 'PSP';
     public $payment_method_description = 'Italy';
 
 }

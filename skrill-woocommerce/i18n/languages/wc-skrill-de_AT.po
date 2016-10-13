@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Skrill - WooCommerce\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-23 19:46+0700\n"
-"PO-Revision-Date: 2016-08-23 19:46+0700\n"
+"POT-Creation-Date: 2016-10-07 18:33+0700\n"
+"PO-Revision-Date: 2016-10-07 18:34+0700\n"
 "Last-Translator: \n"
 "Language-Team: Skrill <info@skrill.com>\n"
 "Language: de_AT\n"
@@ -22,15 +22,15 @@ msgstr ""
 "X-Poedit-SearchPath-2: i18n/languages\n"
 "X-Poedit-SearchPathExcluded-0: i18n/languages\n"
 
-#: class-skrill-payment-gateway.php:496
+#: class-skrill-payment-gateway.php:511
 msgid "BACKEND_GENERAL_PAYMENT_METHOD"
 msgstr "Payment Method"
 
-#: class-skrill-payment-gateway.php:745 class-skrill-payment-gateway.php:870
+#: class-skrill-payment-gateway.php:761 class-skrill-payment-gateway.php:886
 msgid "ERROR_UPDATE_BACKEND"
 msgstr "Der Status kann nicht aktualisiert werden."
 
-#: class-skrill-payment-gateway.php:840
+#: class-skrill-payment-gateway.php:856
 msgid "ERROR_GENERAL_REFUND_PAYMENT"
 msgstr "Leider konnte die Zahlung nicht gutgeschrieben werden."
 
@@ -148,7 +148,7 @@ msgstr "Paysafecard"
 
 #: includes/core/class-configuration.php:100
 msgid "SKRILL_FRONTEND_PM_ACC"
-msgstr "Kreditkarte / Visa, Mastercard, AMEX, JCB, Diners"
+msgstr "Kreditkarte"
 
 #: includes/core/class-configuration.php:103
 msgid "SKRILL_FRONTEND_PM_VSA"
@@ -171,358 +171,342 @@ msgid "SKRILL_FRONTEND_PM_AMX"
 msgstr "American Express"
 
 #: includes/core/class-configuration.php:118
-msgid "SKRILL_FRONTEND_PM_DIN"
-msgstr "Diners"
-
-#: includes/core/class-configuration.php:121
-msgid "SKRILL_FRONTEND_PM_JCB"
-msgstr "JCB"
-
-#: includes/core/class-configuration.php:124
 msgid "SKRILL_FRONTEND_PM_GCB"
 msgstr "Carte Bleue by Visa"
 
-#: includes/core/class-configuration.php:127
+#: includes/core/class-configuration.php:121
 msgid "SKRILL_FRONTEND_PM_DNK"
 msgstr "Dankort by Visa"
 
-#: includes/core/class-configuration.php:130
+#: includes/core/class-configuration.php:124
 msgid "SKRILL_FRONTEND_PM_PSP"
 msgstr "PostePay by Visa"
 
-#: includes/core/class-configuration.php:133
+#: includes/core/class-configuration.php:127
 msgid "SKRILL_FRONTEND_PM_CSI"
 msgstr "CartaSi by Visa"
 
-#: includes/core/class-configuration.php:136
+#: includes/core/class-configuration.php:130
 msgid "SKRILL_FRONTEND_PM_OBT"
-msgstr "Skrill Direct (Online Überweisung)"
+msgstr "Rapid Transfer"
 
-#: includes/core/class-configuration.php:139
+#: includes/core/class-configuration.php:133
 msgid "SKRILL_FRONTEND_PM_GIR"
 msgstr "Giropay"
 
-#: includes/core/class-configuration.php:142
+#: includes/core/class-configuration.php:136
 msgid "SKRILL_FRONTEND_PM_DID"
 msgstr "Lastschrift"
 
-#: includes/core/class-configuration.php:145
+#: includes/core/class-configuration.php:139
 msgid "SKRILL_FRONTEND_PM_SFT"
 msgstr "Sofort&uuml;berweisung"
 
-#: includes/core/class-configuration.php:148
+#: includes/core/class-configuration.php:142
 msgid "SKRILL_FRONTEND_PM_EBT"
 msgstr "Nordea Solo"
 
-#: includes/core/class-configuration.php:151
+#: includes/core/class-configuration.php:145
 msgid "SKRILL_FRONTEND_PM_IDL"
 msgstr "iDEAL"
 
-#: includes/core/class-configuration.php:154
+#: includes/core/class-configuration.php:148
 msgid "SKRILL_FRONTEND_PM_NPY"
 msgstr "EPS (Netpay)"
 
-#: includes/core/class-configuration.php:157
+#: includes/core/class-configuration.php:151
 msgid "SKRILL_FRONTEND_PM_PLI"
 msgstr "POLi"
 
-#: includes/core/class-configuration.php:160
+#: includes/core/class-configuration.php:154
 msgid "SKRILL_FRONTEND_PM_PWY"
 msgstr "Przelewy24"
 
-#: includes/core/class-configuration.php:163
+#: includes/core/class-configuration.php:157
 msgid "SKRILL_FRONTEND_PM_EPY"
 msgstr "ePay.bg"
 
-#: includes/core/class-configuration.php:166
+#: includes/core/class-configuration.php:160
 msgid "SKRILL_FRONTEND_PM_GLU"
 msgstr "Trustly"
 
-#: includes/core/class-configuration.php:169
+#: includes/core/class-configuration.php:163
 msgid "SKRILL_FRONTEND_PM_ALI"
 msgstr "Alipay"
 
-#: includes/core/class-configuration.php:172
+#: includes/core/class-configuration.php:166
 msgid "SKRILL_FRONTEND_PM_NTL"
 msgstr "Neteller"
 
-#: includes/core/class-configuration.php:175
+#: includes/core/class-configuration.php:169
 msgid "SKRILL_FRONTEND_PM_ASTROPAY"
 msgstr "Astropay"
 
-#: includes/core/class-configuration.php:190
+#: includes/core/class-configuration.php:184
 msgid "SKRILL_BACKEND_PM_FLEXIBLE"
 msgstr "Alle Karten und alternativen Zahlungsmethoden"
 
-#: includes/core/class-configuration.php:193
+#: includes/core/class-configuration.php:187
 msgid "SKRILL_BACKEND_PM_WLT"
 msgstr "Skrill Wallet"
 
-#: includes/core/class-configuration.php:196
+#: includes/core/class-configuration.php:190
 msgid "SKRILL_BACKEND_PM_PSC"
 msgstr "Paysafecard"
 
-#: includes/core/class-configuration.php:199
+#: includes/core/class-configuration.php:193
 msgid "SKRILL_BACKEND_PM_ACC"
-msgstr "Kreditkarte / Visa, Mastercard, AMEX, JCB, Diners"
+msgstr "Kreditkarte"
 
-#: includes/core/class-configuration.php:202
+#: includes/core/class-configuration.php:196
 msgid "SKRILL_BACKEND_PM_VSA"
 msgstr "Visa"
 
-#: includes/core/class-configuration.php:205
+#: includes/core/class-configuration.php:199
 msgid "SKRILL_BACKEND_PM_MSC"
 msgstr "MasterCard"
 
-#: includes/core/class-configuration.php:208
+#: includes/core/class-configuration.php:202
 msgid "SKRILL_BACKEND_PM_VSE"
 msgstr "Visa Electron"
 
-#: includes/core/class-configuration.php:211
+#: includes/core/class-configuration.php:205
 msgid "SKRILL_BACKEND_PM_MAE"
 msgstr "Maestro"
 
-#: includes/core/class-configuration.php:214
+#: includes/core/class-configuration.php:208
 msgid "SKRILL_BACKEND_PM_AMX"
 msgstr "American Express"
 
-#: includes/core/class-configuration.php:217
-msgid "SKRILL_BACKEND_PM_DIN"
-msgstr "Diners"
-
-#: includes/core/class-configuration.php:220
-msgid "SKRILL_BACKEND_PM_JCB"
-msgstr "JCB"
-
-#: includes/core/class-configuration.php:223
+#: includes/core/class-configuration.php:211
 msgid "SKRILL_BACKEND_PM_GCB"
 msgstr "Carte Bleue by Visa"
 
-#: includes/core/class-configuration.php:226
+#: includes/core/class-configuration.php:214
 msgid "SKRILL_BACKEND_PM_DNK"
 msgstr "Dankort by Visa"
 
-#: includes/core/class-configuration.php:229
+#: includes/core/class-configuration.php:217
 msgid "SKRILL_BACKEND_PM_PSP"
 msgstr "PostePay by Visa"
 
-#: includes/core/class-configuration.php:232
+#: includes/core/class-configuration.php:220
 msgid "SKRILL_BACKEND_PM_CSI"
 msgstr "CartaSi by Visa"
 
-#: includes/core/class-configuration.php:235
+#: includes/core/class-configuration.php:223
 msgid "SKRILL_BACKEND_PM_OBT"
-msgstr "Skrill Direct (Online Überweisung)"
+msgstr "Rapid Transfer"
 
-#: includes/core/class-configuration.php:238
+#: includes/core/class-configuration.php:226
 msgid "SKRILL_BACKEND_PM_GIR"
 msgstr "Giropay"
 
-#: includes/core/class-configuration.php:241
+#: includes/core/class-configuration.php:229
 msgid "SKRILL_BACKEND_PM_DID"
 msgstr "Lastschrift"
 
-#: includes/core/class-configuration.php:244
+#: includes/core/class-configuration.php:232
 msgid "SKRILL_BACKEND_PM_SFT"
 msgstr "Sofort&uuml;berweisung"
 
-#: includes/core/class-configuration.php:247
+#: includes/core/class-configuration.php:235
 msgid "SKRILL_BACKEND_PM_EBT"
 msgstr "Nordea Solo"
 
-#: includes/core/class-configuration.php:250
+#: includes/core/class-configuration.php:238
 msgid "SKRILL_BACKEND_PM_IDL"
 msgstr "iDEAL"
 
-#: includes/core/class-configuration.php:253
+#: includes/core/class-configuration.php:241
 msgid "SKRILL_BACKEND_PM_NPY"
 msgstr "EPS (Netpay)"
 
-#: includes/core/class-configuration.php:256
+#: includes/core/class-configuration.php:244
 msgid "SKRILL_BACKEND_PM_PLI"
 msgstr "POLi"
 
-#: includes/core/class-configuration.php:259
+#: includes/core/class-configuration.php:247
 msgid "SKRILL_BACKEND_PM_PWY"
 msgstr "Przelewy24"
 
-#: includes/core/class-configuration.php:262
+#: includes/core/class-configuration.php:250
 msgid "SKRILL_BACKEND_PM_EPY"
 msgstr "ePay.bg"
 
-#: includes/core/class-configuration.php:265
+#: includes/core/class-configuration.php:253
 msgid "SKRILL_BACKEND_PM_GLU"
 msgstr "Trustly"
 
-#: includes/core/class-configuration.php:268
+#: includes/core/class-configuration.php:256
 msgid "SKRILL_BACKEND_PM_ALI"
 msgstr "Alipay"
 
-#: includes/core/class-configuration.php:271
+#: includes/core/class-configuration.php:259
 msgid "SKRILL_BACKEND_PM_NTL"
 msgstr "Neteller"
 
-#: includes/core/class-configuration.php:274
+#: includes/core/class-configuration.php:262
 msgid "SKRILL_BACKEND_PM_ASTROPAY"
 msgstr "Astropay"
 
-#: includes/core/class-configuration.php:289
+#: includes/core/class-configuration.php:277
 msgid "ERROR_GENERAL_NORESPONSE"
 msgstr ""
 "Leider konnte ihre Zahlung nicht best&auml;tigt werden. Bitte setzen Sie "
 "sich mit dem H&auml;ndler in Verbindung."
 
-#: includes/core/class-configuration.php:292
+#: includes/core/class-configuration.php:280
 msgid "ERROR_GENERAL_REDIRECT"
 msgstr "Leider kam es zu einem Fehler bei der Weiterleitung"
 
-#: includes/core/class-configuration.php:295
+#: includes/core/class-configuration.php:283
 msgid "ERROR_GENERAL_FRAUD_DETECTION"
 msgstr ""
 "Leider kam es bei der Abwicklung Ihrer Bestellung zu einem Fehler. Eventuell "
 "geleistete Zahlungen werden erstattet."
 
-#: includes/core/class-configuration.php:298
+#: includes/core/class-configuration.php:286
 msgid "ERROR_GENERAL_CANCEL"
 msgstr ""
 "Der Vorgang wurde auf Ihren Wunsch abgebrochen. Bitte versuchen Sie es "
 "erneut."
 
-#: includes/core/class-configuration.php:301
+#: includes/core/class-configuration.php:289
 msgid "SKRILL_ERROR_01"
 msgstr "Vom ausgebenden Institut zur&uuml;ckgewiesen"
 
-#: includes/core/class-configuration.php:304
+#: includes/core/class-configuration.php:292
 msgid "SKRILL_ERROR_02"
 msgstr "Unzul&auml;ssiger H&auml;ndler"
 
-#: includes/core/class-configuration.php:307
+#: includes/core/class-configuration.php:295
 msgid "SKRILL_ERROR_03"
 msgstr "Karte wurde als gestohlen gemeldet"
 
-#: includes/core/class-configuration.php:310
+#: includes/core/class-configuration.php:298
 msgid "SKRILL_ERROR_04"
 msgstr "Vom ausgebenden Institut zur&uuml;ckgewiesen"
 
-#: includes/core/class-configuration.php:313
+#: includes/core/class-configuration.php:301
 msgid "SKRILL_ERROR_05"
 msgstr "Fehlende Deckung"
 
-#: includes/core/class-configuration.php:316
+#: includes/core/class-configuration.php:304
 msgid "SKRILL_ERROR_08"
 msgstr "PIN zu oft falsch eingegeben - Karte gesperrt"
 
-#: includes/core/class-configuration.php:319
+#: includes/core/class-configuration.php:307
 msgid "SKRILL_ERROR_09"
 msgstr "Fehlerhafte Transaktion"
 
-#: includes/core/class-configuration.php:322
+#: includes/core/class-configuration.php:310
 msgid "SKRILL_ERROR_10"
 msgstr "Transaktion zur&uuml;ckgewiesen (Frequenz zu hoch)"
 
-#: includes/core/class-configuration.php:325
+#: includes/core/class-configuration.php:313
 msgid "SKRILL_ERROR_12"
 msgstr "Kreditkarten-/Kontodaten fehlerhaft"
 
-#: includes/core/class-configuration.php:328
+#: includes/core/class-configuration.php:316
 msgid "SKRILL_ERROR_15"
 msgstr "Doppelte Transaktion"
 
-#: includes/core/class-configuration.php:331
+#: includes/core/class-configuration.php:319
 msgid "SKRILL_ERROR_19"
 msgstr "Unbekannter Fehler - bitte versuchen Sie es erneut"
 
-#: includes/core/class-configuration.php:334
+#: includes/core/class-configuration.php:322
 msgid "SKRILL_ERROR_24"
 msgstr "Karte abgelaufen"
 
-#: includes/core/class-configuration.php:337
+#: includes/core/class-configuration.php:325
 msgid "SKRILL_ERROR_28"
 msgstr "Karte wurde als gestohlen/verloren gemeldet"
 
-#: includes/core/class-configuration.php:340
+#: includes/core/class-configuration.php:328
 msgid "SKRILL_ERROR_32"
 msgstr "CVV wurde falsch eingegeben"
 
-#: includes/core/class-configuration.php:343
+#: includes/core/class-configuration.php:331
 msgid "SKRILL_ERROR_37"
 msgstr "Karte vom ausgebenden Institut eingeschränkt"
 
-#: includes/core/class-configuration.php:346
+#: includes/core/class-configuration.php:334
 msgid "SKRILL_ERROR_38"
 msgstr "Sicherheitsverstoß"
 
-#: includes/core/class-configuration.php:349
+#: includes/core/class-configuration.php:337
 msgid "SKRILL_ERROR_42"
 msgstr "Karte wurde vom ausgebenden Institut gesperrt"
 
-#: includes/core/class-configuration.php:352
+#: includes/core/class-configuration.php:340
 msgid "SKRILL_ERROR_44"
 msgstr "Bank nicht erreichbar"
 
-#: includes/core/class-configuration.php:355
+#: includes/core/class-configuration.php:343
 msgid "SKRILL_ERROR_51"
 msgstr "Fehler im Abwicklungssystem"
 
-#: includes/core/class-configuration.php:358
+#: includes/core/class-configuration.php:346
 msgid "SKRILL_ERROR_63"
 msgstr "Transaktion wurde abgelehnt"
 
-#: includes/core/class-configuration.php:361
+#: includes/core/class-configuration.php:349
 msgid "SKRILL_ERROR_70"
 msgstr "3D Secure wurde nicht abgeschlossen"
 
-#: includes/core/class-configuration.php:364
+#: includes/core/class-configuration.php:352
 msgid "SKRILL_ERROR_71"
 msgstr "SMS Verifikation wurde nicht abgeschlossen"
 
-#: includes/core/class-configuration.php:367
+#: includes/core/class-configuration.php:355
 msgid "SKRILL_ERROR_80"
 msgstr "Transaktion vom Sicherheitssystem zur&uuml;ckgewiesen"
 
-#: includes/core/class-configuration.php:370
+#: includes/core/class-configuration.php:358
 msgid "SKRILL_ERROR_98"
 msgstr "Fehler bei der Kommunikation mit dem Anbieter"
 
-#: includes/core/class-configuration.php:373
-#: includes/core/class-configuration.php:376
+#: includes/core/class-configuration.php:361
+#: includes/core/class-configuration.php:364
 msgid "SKRILL_ERROR_99_GENERAL"
 msgstr "Fehlerquelle unbekannt"
 
-#: includes/core/class-configuration.php:392
+#: includes/core/class-configuration.php:380
 msgid "BACKEND_TT_PROCESSED"
 msgstr "Abgewickelt"
 
-#: includes/core/class-configuration.php:395
+#: includes/core/class-configuration.php:383
 msgid "BACKEND_TT_PENDING"
 msgstr "Wartend"
 
-#: includes/core/class-configuration.php:398
+#: includes/core/class-configuration.php:386
 msgid "BACKEND_TT_CANCELLED"
 msgstr "Abgebrochen"
 
-#: includes/core/class-configuration.php:401
+#: includes/core/class-configuration.php:389
 msgid "BACKEND_TT_FAILED"
 msgstr "Fehlgeschlagen"
 
-#: includes/core/class-configuration.php:404
+#: includes/core/class-configuration.php:392
 msgid "BACKEND_TT_CHARGEBACK"
 msgstr "Chargeback"
 
-#: includes/core/class-configuration.php:407
+#: includes/core/class-configuration.php:395
 msgid "BACKEND_TT_REFUNDED"
 msgstr "Refund erfolgreich ausgef&uuml;hrt"
 
-#: includes/core/class-configuration.php:410
+#: includes/core/class-configuration.php:398
 msgid "BACKEND_TT_REFUNDED_FAILED"
 msgstr "Refund fehlgeschlagen"
 
-#: includes/core/class-configuration.php:413
+#: includes/core/class-configuration.php:401
 msgid "BACKEND_TT_FRAUD"
 msgstr "wurde als Betrug eingestuft"
 
-#: includes/core/class-configuration.php:416
-#: includes/core/class-configuration.php:419
+#: includes/core/class-configuration.php:404
+#: includes/core/class-configuration.php:407
 msgid "ERROR_GENERAL_ABANDONED_BYUSER"
 msgstr "Abbruch durch Nutzer"
 
@@ -566,9 +550,26 @@ msgstr "Land (des ausgebenden Instituts)"
 msgid "SKRILL_BACKEND_ORDER_CURRENCY"
 msgstr "Bestellung wurde aufgegeben in"
 
+#: templates/admin/order/additional-information.php:33
+msgid "BACKEND_TT_TRANSACTION_ID"
+msgstr "Transaktions-ID"
+
+#: templates/admin/order/additional-information.php:35
+msgid "SKRILL_BACKEND_EMAIL_ACCOUNT"
+msgstr "Email address of skrill account"
+
 #: templates/admin/order/update-order.php:21
 msgid "BACKEND_TT_UPDATE_ORDER"
 msgstr "Bestellung aktualisieren"
 
-#~ msgid "BACKEND_TT_TRANSACTION_ID"
-#~ msgstr "Transaktions-ID"
+#~ msgid "SKRILL_FRONTEND_PM_DIN"
+#~ msgstr "Diners"
+
+#~ msgid "SKRILL_FRONTEND_PM_JCB"
+#~ msgstr "JCB"
+
+#~ msgid "SKRILL_BACKEND_PM_DIN"
+#~ msgstr "Diners"
+
+#~ msgid "SKRILL_BACKEND_PM_JCB"
+#~ msgstr "JCB"

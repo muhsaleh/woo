@@ -19,6 +19,7 @@ class Gateway_Skrill_DNK extends Skrill_Payment_Gateway
     var $id = 'skrill_dnk';
     public $payment_method_logo = 'dnk.png';
     public $payment_method = 'DNK';
+    public $payment_brand = 'DNK';
     public $payment_method_description = 'Denmark';
 
 }

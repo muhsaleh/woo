@@ -19,6 +19,7 @@ class Gateway_Skrill_PWY extends Skrill_Payment_Gateway
     var $id = 'skrill_pwy';
     public $payment_method_logo = 'pwy.png';
     public $payment_method = 'PWY';
+    public $payment_brand = 'PWY';
     public $payment_method_description = 'Poland';
 
 }

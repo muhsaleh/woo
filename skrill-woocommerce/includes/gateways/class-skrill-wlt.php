@@ -19,6 +19,7 @@ class Gateway_Skrill_WLT extends Skrill_Payment_Gateway
     var $id = 'skrill_wlt';
     public $payment_method_logo = 'wlt.png';
     public $payment_method = 'WLT';
+    public $payment_brand = 'WLT';
 
 }
 

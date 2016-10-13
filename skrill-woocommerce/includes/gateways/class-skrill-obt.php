@@ -19,6 +19,7 @@ class Gateway_Skrill_OBT extends Skrill_Payment_Gateway
     var $id = 'skrill_obt';
     public $payment_method_logo = 'obt.png';
     public $payment_method = 'OBT';
+    public $payment_brand = 'OBT';
     public $payment_method_description = 'Germany, United Kingdom, France, Italy, Spain, Hungary and Austria';
 
 }

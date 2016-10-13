@@ -19,6 +19,7 @@ class Gateway_Skrill_IDL extends Skrill_Payment_Gateway
     var $id = 'skrill_idl';
     public $payment_method_logo = 'idl.png';
     public $payment_method = 'IDL';
+    public $payment_brand = 'IDL';
     public $payment_method_description = 'Netherlands';
 
 }

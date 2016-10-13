@@ -19,6 +19,7 @@ class Gateway_Skrill_AMX extends Skrill_Payment_Gateway
     var $id = 'skrill_amx';
     public $payment_method_logo = 'amx.png';
     public $payment_method = 'AMX';
+    public $payment_brand = 'AMX';
 
 }
 

@@ -19,6 +19,7 @@ class Gateway_Skrill_DID extends Skrill_Payment_Gateway
     var $id = 'skrill_did';
     public $payment_method_logo = 'did.png';
     public $payment_method = 'DID';
+    public $payment_brand = 'DID';
     public $payment_method_description = 'Germany';
 
 }

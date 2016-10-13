@@ -19,6 +19,7 @@ class Gateway_Skrill_MAE extends Skrill_Payment_Gateway
     var $id = 'skrill_mae';
     public $payment_method_logo = 'mae.png';
     public $payment_method = 'MAE';
+    public $payment_brand = 'MAE';
     public $payment_method_description = 'United Kingdom, Spain, Ireland and Austria';
 
 }

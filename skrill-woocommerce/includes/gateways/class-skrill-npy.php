@@ -19,6 +19,7 @@ class Gateway_Skrill_NPY extends Skrill_Payment_Gateway
     var $id = 'skrill_npy';
     public $payment_method_logo = 'npy.png';
     public $payment_method = 'NPY';
+    public $payment_brand = 'NPY';
     public $payment_method_description = 'Austria';
 
 }

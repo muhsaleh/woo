@@ -19,6 +19,7 @@ class Gateway_Skrill_EBT extends Skrill_Payment_Gateway
     var $id = 'skrill_ebt';
     public $payment_method_logo = 'ebt.png';
     public $payment_method = 'EBT';
+    public $payment_brand = 'EBT';
     public $payment_method_description = 'Sweden';
 
 }

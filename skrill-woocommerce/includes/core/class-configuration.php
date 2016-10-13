@@ -114,12 +114,6 @@ class Configuration {
             case 'skrill_amx':
                 $payment_method_title =  __('SKRILL_FRONTEND_PM_AMX', 'wc-skrill');
                 break;
-            case 'skrill_din':
-                $payment_method_title =  __('SKRILL_FRONTEND_PM_DIN', 'wc-skrill');
-                break;
-            case 'skrill_jcb':
-                $payment_method_title =  __('SKRILL_FRONTEND_PM_JCB', 'wc-skrill');
-                break;
             case 'skrill_gcb':
                 $payment_method_title =  __('SKRILL_FRONTEND_PM_GCB', 'wc-skrill');
                 break;
@@ -212,12 +206,6 @@ class Configuration {
                 break;
             case 'skrill_amx':
                 $payment_method_title =  __('SKRILL_BACKEND_PM_AMX', 'wc-skrill');
-                break;
-            case 'skrill_din':
-                $payment_method_title =  __('SKRILL_BACKEND_PM_DIN', 'wc-skrill');
-                break;
-            case 'skrill_jcb':
-                $payment_method_title =  __('SKRILL_BACKEND_PM_JCB', 'wc-skrill');
                 break;
             case 'skrill_gcb':
                 $payment_method_title =  __('SKRILL_BACKEND_PM_GCB', 'wc-skrill');

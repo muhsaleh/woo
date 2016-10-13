@@ -19,6 +19,7 @@ class Gateway_Skrill_GLU extends Skrill_Payment_Gateway
     var $id = 'skrill_glu';
     public $payment_method_logo = 'glu.png';
     public $payment_method = 'GLU';
+    public $payment_brand = 'GLU';
     public $payment_method_description = 'Sweden, Finland, Estonia, Denmark, Spain, Poland, Italy, France, Germany,
         Portugal, Austria, Latvia, Lithuania, Netherlands';
 
