@@ -1,0 +1,574 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Skrill - WooCommerce\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-23 19:47+0700\n"
+"PO-Revision-Date: 2016-08-23 19:47+0700\n"
+"Last-Translator: \n"
+"Language-Team: Skrill <info@skrill.com>\n"
+"Language: de_CH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_;gettext;gettext_noop;__;_e;"
+"__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;"
+"_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: i18n\n"
+"X-Poedit-SearchPath-1: .\n"
+"X-Poedit-SearchPath-2: i18n/languages\n"
+"X-Poedit-SearchPathExcluded-0: i18n/languages\n"
+
+#: class-skrill-payment-gateway.php:496
+msgid "BACKEND_GENERAL_PAYMENT_METHOD"
+msgstr "Payment Method"
+
+#: class-skrill-payment-gateway.php:745 class-skrill-payment-gateway.php:870
+msgid "ERROR_UPDATE_BACKEND"
+msgstr "Der Status kann nicht aktualisiert werden."
+
+#: class-skrill-payment-gateway.php:840
+msgid "ERROR_GENERAL_REFUND_PAYMENT"
+msgstr "Leider konnte die Zahlung nicht gutgeschrieben werden."
+
+#: includes/admin/class-payments-setting.php:29
+msgid "BACKEND_CH_ACTIVE"
+msgstr "Aktiviert"
+
+#: includes/admin/class-payments-setting.php:38
+msgid "SKRILL_BACKEND_PM_MODE"
+msgstr "Separat anzeigen"
+
+#: includes/admin/class-skrill-setting.php:48 skrill.php:48
+msgid "SKRILL_BACKEND_PM_SETTINGS"
+msgstr "Skrill Einstellungen"
+
+#: includes/admin/class-skrill-setting.php:81
+msgid "BACKEND_CH_GENERAL"
+msgstr "Allgemeine Einstellungen"
+
+#: includes/admin/class-skrill-setting.php:87
+msgid "SKRILL_BACKEND_MID"
+msgstr "H&auml;ndler ID"
+
+#: includes/admin/class-skrill-setting.php:91
+msgid "SKRILL_BACKEND_TT_MID"
+msgstr ""
+"Ihre Kunden-ID von Skrill. Sie finden sie in der oberen rechten Ecke Ihres "
+"Skrill Kontos."
+
+#: includes/admin/class-skrill-setting.php:94
+msgid "SKRILL_BACKEND_MERCHANT"
+msgstr "H&auml;ndler-Konto (E-Mail)"
+
+#: includes/admin/class-skrill-setting.php:98
+msgid "SKRILL_BACKEND_TT_MEMAIL"
+msgstr "Die E-Mail Adresse Ihres Skrill Kontos."
+
+#: includes/admin/class-skrill-setting.php:101
+msgid "SKRILL_BACKEND_RECIPIENT"
+msgstr "Empf&auml;nger"
+
+#: includes/admin/class-skrill-setting.php:105
+msgid "SKRILL_BACKEND_TT_RECIPIENT"
+msgstr ""
+"Eine Beschreibung die w&auml;hrend des Quick Checkouts angezeigt wird. Dies "
+"sollte in der Regel der Name Ihres Unternehmens sein."
+
+#: includes/admin/class-skrill-setting.php:108
+msgid "SKRILL_BACKEND_LOGO"
+msgstr "Logo Url"
+
+#: includes/admin/class-skrill-setting.php:112
+msgid "SKRILL_BACKEND_TT_LOGO"
+msgstr ""
+"Die URL des Logos welches während des Quick Checkouts angezeigt werden soll. "
+"Das Logo muss per HTTPS erreichbar sein, anderenfalls kann es nicht "
+"angezeigt werden. Um das beste Ergebnis zu erzielen sollte das Logo  200px "
+"breit und 50px hoch sein."
+
+#: includes/admin/class-skrill-setting.php:115
+msgid "SKRILL_BACKEND_SHOPURL"
+msgstr "Shop Url"
+
+#: includes/admin/class-skrill-setting.php:121
+#: includes/admin/class-skrill-setting.php:125
+msgid "SKRILL_BACKEND_APIPASS"
+msgstr "API Passwort"
+
+#: includes/admin/class-skrill-setting.php:128
+msgid "SKRILL_BACKEND_SECRETWORD"
+msgstr "Geheimwort"
+
+#: includes/admin/class-skrill-setting.php:132
+msgid "SKRILL_BACKEND_TT_SECRET"
+msgstr ""
+"Dieses Feature ist verpflichtend und garantiert die Datenintegrit&auml;t bei "
+"der Kommunikation mit Skrill. Sie aktivieren dieses Feature in Ihrem Skrill "
+"Konto unter Einstellungen -> Entwickler Einstellungen."
+
+#: includes/admin/class-skrill-setting.php:135
+msgid "SKRILL_BACKEND_DISPLAY"
+msgstr "Anzeige"
+
+#: includes/admin/class-skrill-setting.php:140
+msgid "SKRILL_BACKEND_IFRAME"
+msgstr "IFrame"
+
+#: includes/admin/class-skrill-setting.php:141
+msgid "SKRILL_BACKEND_REDIRECT"
+msgstr "externe Seite"
+
+#: includes/admin/class-skrill-setting.php:146
+msgid "SKRILL_BACKEND_MERCHANTEMAIL"
+msgstr "Merchant Email"
+
+#: includes/admin/class-skrill-setting.php:150
+msgid "SKRILL_BACKEND_TT_MERCHANTEMAIL"
+msgstr "Your email address to receive payment notification."
+
+#: includes/admin/class-skrill-setting.php:183
+msgid "ERROR_GENERAL_MANDATORY"
+msgstr "Please fill in all the mandatory fields"
+
+#: includes/core/class-configuration.php:91
+msgid "SKRILL_FRONTEND_PM_FLEXIBLE"
+msgstr "Pay By Skrill"
+
+#: includes/core/class-configuration.php:94
+msgid "SKRILL_FRONTEND_PM_WLT"
+msgstr "Skrill Wallet"
+
+#: includes/core/class-configuration.php:97
+msgid "SKRILL_FRONTEND_PM_PSC"
+msgstr "Paysafecard"
+
+#: includes/core/class-configuration.php:100
+msgid "SKRILL_FRONTEND_PM_ACC"
+msgstr "Kreditkarte / Visa, Mastercard, AMEX, JCB, Diners"
+
+#: includes/core/class-configuration.php:103
+msgid "SKRILL_FRONTEND_PM_VSA"
+msgstr "Visa"
+
+#: includes/core/class-configuration.php:106
+msgid "SKRILL_FRONTEND_PM_MSC"
+msgstr "MasterCard"
+
+#: includes/core/class-configuration.php:109
+msgid "SKRILL_FRONTEND_PM_VSE"
+msgstr "Visa Electron"
+
+#: includes/core/class-configuration.php:112
+msgid "SKRILL_FRONTEND_PM_MAE"
+msgstr "Maestro"
+
+#: includes/core/class-configuration.php:115
+msgid "SKRILL_FRONTEND_PM_AMX"
+msgstr "American Express"
+
+#: includes/core/class-configuration.php:118
+msgid "SKRILL_FRONTEND_PM_DIN"
+msgstr "Diners"
+
+#: includes/core/class-configuration.php:121
+msgid "SKRILL_FRONTEND_PM_JCB"
+msgstr "JCB"
+
+#: includes/core/class-configuration.php:124
+msgid "SKRILL_FRONTEND_PM_GCB"
+msgstr "Carte Bleue by Visa"
+
+#: includes/core/class-configuration.php:127
+msgid "SKRILL_FRONTEND_PM_DNK"
+msgstr "Dankort by Visa"
+
+#: includes/core/class-configuration.php:130
+msgid "SKRILL_FRONTEND_PM_PSP"
+msgstr "PostePay by Visa"
+
+#: includes/core/class-configuration.php:133
+msgid "SKRILL_FRONTEND_PM_CSI"
+msgstr "CartaSi by Visa"
+
+#: includes/core/class-configuration.php:136
+msgid "SKRILL_FRONTEND_PM_OBT"
+msgstr "Skrill Direct (Online Überweisung)"
+
+#: includes/core/class-configuration.php:139
+msgid "SKRILL_FRONTEND_PM_GIR"
+msgstr "Giropay"
+
+#: includes/core/class-configuration.php:142
+msgid "SKRILL_FRONTEND_PM_DID"
+msgstr "Lastschrift"
+
+#: includes/core/class-configuration.php:145
+msgid "SKRILL_FRONTEND_PM_SFT"
+msgstr "Sofort&uuml;berweisung"
+
+#: includes/core/class-configuration.php:148
+msgid "SKRILL_FRONTEND_PM_EBT"
+msgstr "Nordea Solo"
+
+#: includes/core/class-configuration.php:151
+msgid "SKRILL_FRONTEND_PM_IDL"
+msgstr "iDEAL"
+
+#: includes/core/class-configuration.php:154
+msgid "SKRILL_FRONTEND_PM_NPY"
+msgstr "EPS (Netpay)"
+
+#: includes/core/class-configuration.php:157
+msgid "SKRILL_FRONTEND_PM_PLI"
+msgstr "POLi"
+
+#: includes/core/class-configuration.php:160
+msgid "SKRILL_FRONTEND_PM_PWY"
+msgstr "Przelewy24"
+
+#: includes/core/class-configuration.php:163
+msgid "SKRILL_FRONTEND_PM_EPY"
+msgstr "ePay.bg"
+
+#: includes/core/class-configuration.php:166
+msgid "SKRILL_FRONTEND_PM_GLU"
+msgstr "Trustly"
+
+#: includes/core/class-configuration.php:169
+msgid "SKRILL_FRONTEND_PM_ALI"
+msgstr "Alipay"
+
+#: includes/core/class-configuration.php:172
+msgid "SKRILL_FRONTEND_PM_NTL"
+msgstr "Neteller"
+
+#: includes/core/class-configuration.php:175
+msgid "SKRILL_FRONTEND_PM_ASTROPAY"
+msgstr "Astropay"
+
+#: includes/core/class-configuration.php:190
+msgid "SKRILL_BACKEND_PM_FLEXIBLE"
+msgstr "Alle Karten und alternativen Zahlungsmethoden"
+
+#: includes/core/class-configuration.php:193
+msgid "SKRILL_BACKEND_PM_WLT"
+msgstr "Skrill Wallet"
+
+#: includes/core/class-configuration.php:196
+msgid "SKRILL_BACKEND_PM_PSC"
+msgstr "Paysafecard"
+
+#: includes/core/class-configuration.php:199
+msgid "SKRILL_BACKEND_PM_ACC"
+msgstr "Kreditkarte / Visa, Mastercard, AMEX, JCB, Diners"
+
+#: includes/core/class-configuration.php:202
+msgid "SKRILL_BACKEND_PM_VSA"
+msgstr "Visa"
+
+#: includes/core/class-configuration.php:205
+msgid "SKRILL_BACKEND_PM_MSC"
+msgstr "MasterCard"
+
+#: includes/core/class-configuration.php:208
+msgid "SKRILL_BACKEND_PM_VSE"
+msgstr "Visa Electron"
+
+#: includes/core/class-configuration.php:211
+msgid "SKRILL_BACKEND_PM_MAE"
+msgstr "Maestro"
+
+#: includes/core/class-configuration.php:214
+msgid "SKRILL_BACKEND_PM_AMX"
+msgstr "American Express"
+
+#: includes/core/class-configuration.php:217
+msgid "SKRILL_BACKEND_PM_DIN"
+msgstr "Diners"
+
+#: includes/core/class-configuration.php:220
+msgid "SKRILL_BACKEND_PM_JCB"
+msgstr "JCB"
+
+#: includes/core/class-configuration.php:223
+msgid "SKRILL_BACKEND_PM_GCB"
+msgstr "Carte Bleue by Visa"
+
+#: includes/core/class-configuration.php:226
+msgid "SKRILL_BACKEND_PM_DNK"
+msgstr "Dankort by Visa"
+
+#: includes/core/class-configuration.php:229
+msgid "SKRILL_BACKEND_PM_PSP"
+msgstr "PostePay by Visa"
+
+#: includes/core/class-configuration.php:232
+msgid "SKRILL_BACKEND_PM_CSI"
+msgstr "CartaSi by Visa"
+
+#: includes/core/class-configuration.php:235
+msgid "SKRILL_BACKEND_PM_OBT"
+msgstr "Skrill Direct (Online Überweisung)"
+
+#: includes/core/class-configuration.php:238
+msgid "SKRILL_BACKEND_PM_GIR"
+msgstr "Giropay"
+
+#: includes/core/class-configuration.php:241
+msgid "SKRILL_BACKEND_PM_DID"
+msgstr "Lastschrift"
+
+#: includes/core/class-configuration.php:244
+msgid "SKRILL_BACKEND_PM_SFT"
+msgstr "Sofort&uuml;berweisung"
+
+#: includes/core/class-configuration.php:247
+msgid "SKRILL_BACKEND_PM_EBT"
+msgstr "Nordea Solo"
+
+#: includes/core/class-configuration.php:250
+msgid "SKRILL_BACKEND_PM_IDL"
+msgstr "iDEAL"
+
+#: includes/core/class-configuration.php:253
+msgid "SKRILL_BACKEND_PM_NPY"
+msgstr "EPS (Netpay)"
+
+#: includes/core/class-configuration.php:256
+msgid "SKRILL_BACKEND_PM_PLI"
+msgstr "POLi"
+
+#: includes/core/class-configuration.php:259
+msgid "SKRILL_BACKEND_PM_PWY"
+msgstr "Przelewy24"
+
+#: includes/core/class-configuration.php:262
+msgid "SKRILL_BACKEND_PM_EPY"
+msgstr "ePay.bg"
+
+#: includes/core/class-configuration.php:265
+msgid "SKRILL_BACKEND_PM_GLU"
+msgstr "Trustly"
+
+#: includes/core/class-configuration.php:268
+msgid "SKRILL_BACKEND_PM_ALI"
+msgstr "Alipay"
+
+#: includes/core/class-configuration.php:271
+msgid "SKRILL_BACKEND_PM_NTL"
+msgstr "Neteller"
+
+#: includes/core/class-configuration.php:274
+msgid "SKRILL_BACKEND_PM_ASTROPAY"
+msgstr "Astropay"
+
+#: includes/core/class-configuration.php:289
+msgid "ERROR_GENERAL_NORESPONSE"
+msgstr ""
+"Leider konnte ihre Zahlung nicht best&auml;tigt werden. Bitte setzen Sie "
+"sich mit dem H&auml;ndler in Verbindung."
+
+#: includes/core/class-configuration.php:292
+msgid "ERROR_GENERAL_REDIRECT"
+msgstr "Leider kam es zu einem Fehler bei der Weiterleitung"
+
+#: includes/core/class-configuration.php:295
+msgid "ERROR_GENERAL_FRAUD_DETECTION"
+msgstr ""
+"Leider kam es bei der Abwicklung Ihrer Bestellung zu einem Fehler. Eventuell "
+"geleistete Zahlungen werden erstattet."
+
+#: includes/core/class-configuration.php:298
+msgid "ERROR_GENERAL_CANCEL"
+msgstr ""
+"Der Vorgang wurde auf Ihren Wunsch abgebrochen. Bitte versuchen Sie es "
+"erneut."
+
+#: includes/core/class-configuration.php:301
+msgid "SKRILL_ERROR_01"
+msgstr "Vom ausgebenden Institut zur&uuml;ckgewiesen"
+
+#: includes/core/class-configuration.php:304
+msgid "SKRILL_ERROR_02"
+msgstr "Unzul&auml;ssiger H&auml;ndler"
+
+#: includes/core/class-configuration.php:307
+msgid "SKRILL_ERROR_03"
+msgstr "Karte wurde als gestohlen gemeldet"
+
+#: includes/core/class-configuration.php:310
+msgid "SKRILL_ERROR_04"
+msgstr "Vom ausgebenden Institut zur&uuml;ckgewiesen"
+
+#: includes/core/class-configuration.php:313
+msgid "SKRILL_ERROR_05"
+msgstr "Fehlende Deckung"
+
+#: includes/core/class-configuration.php:316
+msgid "SKRILL_ERROR_08"
+msgstr "PIN zu oft falsch eingegeben - Karte gesperrt"
+
+#: includes/core/class-configuration.php:319
+msgid "SKRILL_ERROR_09"
+msgstr "Fehlerhafte Transaktion"
+
+#: includes/core/class-configuration.php:322
+msgid "SKRILL_ERROR_10"
+msgstr "Transaktion zur&uuml;ckgewiesen (Frequenz zu hoch)"
+
+#: includes/core/class-configuration.php:325
+msgid "SKRILL_ERROR_12"
+msgstr "Kreditkarten-/Kontodaten fehlerhaft"
+
+#: includes/core/class-configuration.php:328
+msgid "SKRILL_ERROR_15"
+msgstr "Doppelte Transaktion"
+
+#: includes/core/class-configuration.php:331
+msgid "SKRILL_ERROR_19"
+msgstr "Unbekannter Fehler - bitte versuchen Sie es erneut"
+
+#: includes/core/class-configuration.php:334
+msgid "SKRILL_ERROR_24"
+msgstr "Karte abgelaufen"
+
+#: includes/core/class-configuration.php:337
+msgid "SKRILL_ERROR_28"
+msgstr "Karte wurde als gestohlen/verloren gemeldet"
+
+#: includes/core/class-configuration.php:340
+msgid "SKRILL_ERROR_32"
+msgstr "CVV wurde falsch eingegeben"
+
+#: includes/core/class-configuration.php:343
+msgid "SKRILL_ERROR_37"
+msgstr "Karte vom ausgebenden Institut eingeschränkt"
+
+#: includes/core/class-configuration.php:346
+msgid "SKRILL_ERROR_38"
+msgstr "Sicherheitsverstoß"
+
+#: includes/core/class-configuration.php:349
+msgid "SKRILL_ERROR_42"
+msgstr "Karte wurde vom ausgebenden Institut gesperrt"
+
+#: includes/core/class-configuration.php:352
+msgid "SKRILL_ERROR_44"
+msgstr "Bank nicht erreichbar"
+
+#: includes/core/class-configuration.php:355
+msgid "SKRILL_ERROR_51"
+msgstr "Fehler im Abwicklungssystem"
+
+#: includes/core/class-configuration.php:358
+msgid "SKRILL_ERROR_63"
+msgstr "Transaktion wurde abgelehnt"
+
+#: includes/core/class-configuration.php:361
+msgid "SKRILL_ERROR_70"
+msgstr "3D Secure wurde nicht abgeschlossen"
+
+#: includes/core/class-configuration.php:364
+msgid "SKRILL_ERROR_71"
+msgstr "SMS Verifikation wurde nicht abgeschlossen"
+
+#: includes/core/class-configuration.php:367
+msgid "SKRILL_ERROR_80"
+msgstr "Transaktion vom Sicherheitssystem zur&uuml;ckgewiesen"
+
+#: includes/core/class-configuration.php:370
+msgid "SKRILL_ERROR_98"
+msgstr "Fehler bei der Kommunikation mit dem Anbieter"
+
+#: includes/core/class-configuration.php:373
+#: includes/core/class-configuration.php:376
+msgid "SKRILL_ERROR_99_GENERAL"
+msgstr "Fehlerquelle unbekannt"
+
+#: includes/core/class-configuration.php:392
+msgid "BACKEND_TT_PROCESSED"
+msgstr "Abgewickelt"
+
+#: includes/core/class-configuration.php:395
+msgid "BACKEND_TT_PENDING"
+msgstr "Wartend"
+
+#: includes/core/class-configuration.php:398
+msgid "BACKEND_TT_CANCELLED"
+msgstr "Abgebrochen"
+
+#: includes/core/class-configuration.php:401
+msgid "BACKEND_TT_FAILED"
+msgstr "Fehlgeschlagen"
+
+#: includes/core/class-configuration.php:404
+msgid "BACKEND_TT_CHARGEBACK"
+msgstr "Chargeback"
+
+#: includes/core/class-configuration.php:407
+msgid "BACKEND_TT_REFUNDED"
+msgstr "Refund erfolgreich ausgef&uuml;hrt"
+
+#: includes/core/class-configuration.php:410
+msgid "BACKEND_TT_REFUNDED_FAILED"
+msgstr "Refund fehlgeschlagen"
+
+#: includes/core/class-configuration.php:413
+msgid "BACKEND_TT_FRAUD"
+msgstr "wurde als Betrug eingestuft"
+
+#: includes/core/class-configuration.php:416
+#: includes/core/class-configuration.php:419
+msgid "ERROR_GENERAL_ABANDONED_BYUSER"
+msgstr "Abbruch durch Nutzer"
+
+#: skrill-install.php:94 skrill-install.php:113
+msgctxt "WooCommerce Order Status"
+msgid "Skrill - Payment Accepted"
+msgstr ""
+
+#: skrill-install.php:99
+#, php-format
+msgid "Skrill - Payment Accepted (%s)"
+msgid_plural "Skrill - Payment Accepted (%s)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: skrill.php:36
+msgid "BACKEND_GENERAL_PLUGINREQ"
+msgstr "must be active for the plugin"
+
+#: templates/admin/order/additional-information.php:19
+msgid "BACKEND_GENERAL_INFORMATION"
+msgstr "Payment Information"
+
+#: templates/admin/order/additional-information.php:23
+msgid "SKRILL_BACKEND_ORDER_STATUS"
+msgstr "Zahlungsstatus"
+
+#: templates/admin/order/additional-information.php:24
+msgid "SKRILL_BACKEND_ORDER_PM"
+msgstr "Verwendete Zahlungsmethode"
+
+#: templates/admin/order/additional-information.php:26
+msgid "SKRILL_BACKEND_ORDER_ORIGIN"
+msgstr "Bestellung stammt aus"
+
+#: templates/admin/order/additional-information.php:29
+msgid "SKRILL_BACKEND_ORDER_COUNTRY"
+msgstr "Land (des ausgebenden Instituts)"
+
+#: templates/admin/order/additional-information.php:31
+msgid "SKRILL_BACKEND_ORDER_CURRENCY"
+msgstr "Bestellung wurde aufgegeben in"
+
+#: templates/admin/order/update-order.php:21
+msgid "BACKEND_TT_UPDATE_ORDER"
+msgstr "Bestellung aktualisieren"
+
+#~ msgid "BACKEND_TT_TRANSACTION_ID"
+#~ msgstr "Transaktions-ID"
